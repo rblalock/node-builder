@@ -2,7 +2,7 @@
 
 Interactive demo of [Squidi Mechanic #147](https://www.squidi.net/three/entry.php?id=147) — radial pie-wedge node placement on circular hubs. Click a node's ring, drag outward, release to branch.
 
-**Live demo:** after deploying, your site will be at `https://<username>.github.io/<repo>/`
+**Live demo:** https://rblalock.github.io/node-builder/
 
 ## Try locally
 
