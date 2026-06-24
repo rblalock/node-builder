@@ -4,6 +4,8 @@ Interactive radial node graph builder — pie-wedge placement on circular hubs. 
 
 **Live demo:** https://rblalock.github.io/node-builder/
 
+![Example graph built in Nodal Builder](docs/example.jpg)
+
 ## Try locally
 
 ```bash
