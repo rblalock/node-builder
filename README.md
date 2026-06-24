@@ -1,6 +1,6 @@
 # Nodal Builder
 
-Interactive demo of [Squidi Mechanic #147](https://www.squidi.net/three/entry.php?id=147) — radial pie-wedge node placement on circular hubs. Click a node's ring, drag outward, release to branch.
+Interactive radial node graph builder — pie-wedge placement on circular hubs. Click a node's ring, drag outward, release to branch.
 
 **Live demo:** https://rblalock.github.io/node-builder/
 

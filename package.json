@@ -2,7 +2,7 @@
   "name": "node-builder",
   "private": true,
   "version": "0.1.0",
-  "description": "Radial pie-wedge node graph builder — interactive demo of Squidi Mechanic #147",
+  "description": "Radial pie-wedge node graph builder — interactive SVG demo",
   "type": "module",
   "scripts": {
     "dev": "vite",

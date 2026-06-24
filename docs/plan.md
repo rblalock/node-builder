@@ -1,6 +1,6 @@
 # Nodal Builder UI Component Library
 
-Build a standalone React + SVG component library in `node-builder` that faithfully implements [Squidi Mechanic #147](https://www.squidi.net/three/entry.php?id=147)'s pie-wedge node placement system — with modern vector styling, drag-to-place interactions, angular capacity rules, and size-tier constraints — without RTS game logic.
+Build a standalone React + SVG component library in `node-builder` for pie-wedge node placement — with modern vector styling, drag-to-place interactions, angular capacity rules, and size-tier constraints — without game simulation logic.
 
 ## Decisions
 
@@ -16,9 +16,9 @@ Build a standalone React + SVG component library in `node-builder` that faithful
 
 ---
 
-## What Mechanic #147 Describes
+## Core concept
 
-The core idea is **angular slot allocation on circular nodes**, inspired by [Moonbase Commander](http://www.mobygames.com/game/windows/moonbase-commander). This is not a generic mind-map.
+The core idea is **angular slot allocation on circular nodes** — radial hubs with wedge-shaped connection ports, not a generic free-form mind map.
 
 ```mermaid
 flowchart LR
@@ -37,17 +37,6 @@ flowchart LR
   Release --> constraints
 ```
 
-### Image reference
-
-| Image | What it shows | UI relevance |
-|-------|---------------|--------------|
-| [nodal1](https://www.squidi.net/three/set08/img/entry147-nodal1.png) | Mature network on checkerboard map | End-state visual: size hierarchy, hub vs leaf |
-| [nodal2](https://www.squidi.net/three/set08/img/entry147-nodal2.png) | Gray wedge → brown active → green drag line | Core interaction: wedge select, radial drag |
-| [nodal3](https://www.squidi.net/three/set08/img/entry147-nodal3.png) | Pie-chart hub with 4 children at varying distances | Wedge capacity; distance set per drag |
-| [nodal4](https://www.squidi.net/three/set08/img/entry147-nodal4.png) | Edge insertion + branched hub | Mid-edge node type splits connections |
-| [nodal5](https://www.squidi.net/three/set08/img/entry147-nodal5.png) | Resource zone with satellite nodes | Optional later — game layer, not v1 |
-| [poster](https://www.squidi.net/three/poster/poster147.png) | Sparse hub vs dense network | Growth via repeated wedge placement |
-
 ### Mechanics to implement
 
 1. **Pie wedges as ports** — each node exposes angular slots; selecting one enters placement mode
@@ -62,8 +51,7 @@ flowchart LR
 - RTS resources, harvesting, unit production
 - Map terrain / fog of war
 - Real-time simulation
-- Resource zones (nodal5)
-- Chronos Tactics timeline integration ([#142](https://www.squidi.net/three/entry.php?id=142))
+- Resource zones on a map grid
 - Storybook
 
 ---
@@ -153,13 +141,13 @@ stateDiagram-v2
 
 ### Visual language
 
-Modern interpretation of Squidi's semantic colors:
+Semantic colors:
 
 - Nodes: white/light fill, subtle stroke; radii 12 / 20 / 32px by tier
 - Wedges: `available` = faint gray; `active` = warm gold/amber; `occupied` = muted fill
 - Placement preview: green dashed radial line + semi-transparent ghost circle
 - Connections: thin neutral gray, parent perimeter → child center at wedge angle
-- Hub nodes: multi-color wedge sectors showing all slot states (nodal3 pattern)
+- Hub nodes: multi-color wedge sectors showing all slot states
 - Selection: soft ring highlight
 
 ---
